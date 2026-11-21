@@ -1,0 +1,19 @@
+[*] waiting for guest boot...
+[+] login: False
+[web]: HTTP/1.0 200 OK
+
+===== RouterSploit 模块真实固件测试 =====
+
+TEST 1: nr1800x_login_bypass (authCode=1 -> SESSION_ID)
+  check() = True
+
+TEST 2: nr1800x_setussd_rce (blind command injection, time-based check)
+  check() = True  (baseline vs sleep-5 delta > 4s)
+
+TEST 3: marker side-effect x3 (blind injection console readback)
+  round 1: MARKER LANDED
+  round 2: MARKER LANDED
+  round 3: MARKER LANDED
+  RESULT: 3/3 deterministic
+
+===== EMULATION_TEST_PASS =====
